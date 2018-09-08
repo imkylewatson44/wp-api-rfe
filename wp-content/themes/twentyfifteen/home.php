@@ -20,12 +20,22 @@ if( !empty($image) ): ?>
 
   <div id="primary" class="site-content">
     <div id="content" role="main">
-      <h1>TEST</h1>
+      <h1>Blog Posts</h1>
+      <?php
+        $args=array('order'=> 'DESC', 'posts_per_page'=>get_option('posts_per_page'));
+        $query=new WP_Query($args);
+          if( $query->have_posts()):
+              while( $query->have_posts()): $query->the_post();
+              {
+                echo $post->post_title;
+                echo $post->post_content;
+              }
+              endwhile;
+          else:
+          endif;
+        ?>
 
-      <?php while ( have_posts() ) : the_post(); ?>
-        <?php get_template_part( 'content', 'page' ); ?>
 
-      <?php endwhile; // end of the loop. ?>
 
     </div><!-- #content -->
   </div><!-- #primary -->
