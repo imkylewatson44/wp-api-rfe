@@ -27,7 +27,6 @@ if( !empty($image) ): ?>
           if( $query->have_posts()):
               while( $query->have_posts()): $query->the_post();
               {
-                echo $post->post_title;
                 echo $post->post_content;
               }
               endwhile;
