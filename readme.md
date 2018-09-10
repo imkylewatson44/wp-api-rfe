@@ -27,6 +27,7 @@ the project further:
 ```shell
 git clone git@github.com:imkylewatson44/wp-api-rfe.git
 cd wp-api-rfe/
+git pull origin master
 edit wp-config root/root for the login
 make hosts entry us wp.local or chaneg it but must find/replace the .sql DB
 visit site /wp-admin
